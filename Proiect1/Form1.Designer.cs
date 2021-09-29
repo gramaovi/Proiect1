@@ -40,7 +40,7 @@ namespace Proiect1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(6, 16);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown1.Size = new System.Drawing.Size(83, 20);
             this.numericUpDown1.TabIndex = 0;
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
@@ -50,7 +50,7 @@ namespace Proiect1
             this.groupBox1.Controls.Add(this.flowLayoutPanel1);
             this.groupBox1.Location = new System.Drawing.Point(23, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(151, 426);
+            this.groupBox1.Size = new System.Drawing.Size(114, 426);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -59,7 +59,7 @@ namespace Proiect1
             // 
             this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 42);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(120, 369);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(102, 369);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // Form1
