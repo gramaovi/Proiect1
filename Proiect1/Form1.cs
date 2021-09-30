@@ -249,6 +249,10 @@ namespace Proiect1
             {
                 case "Liniara":
                     {
+                        variableLabel.Visible = true;
+                        alpha.Visible = true;
+                        variableLabel.Text = "α";
+                        
                         tetaUD.Minimum = -1;
                         tetaUD.Maximum = 1;
                         if (Convert.ToDecimal(intrareTb.Text) > alpha.Value)
@@ -270,7 +274,37 @@ namespace Proiect1
 
                 case "Sigmoidala":
                     {
+                        variableLabel.Visible = true;
+                        alpha.Visible = true;
+                        variableLabel.Text = "g";
                         activareTb.Text = (1 / (1 + Math.Pow(Math.E, (double)-alpha.Value)*(Convert.ToDouble(intrareTb.Text) - Convert.ToDouble(tetaUD.Value)))).ToString();
+                        break;
+                    }
+
+                case "Treapta":
+                    {
+                        variableLabel.Visible = false;
+                        alpha.Visible = false ;
+                        if (Convert.ToDouble(intrareTb.Text) >= Convert.ToDouble(tetaUD.Value)) activareTb.Text = 1.ToString();
+                        if (Convert.ToDouble(intrareTb.Text) < Convert.ToDouble(tetaUD.Value)) activareTb.Text = 0.ToString();
+                    }
+                    break;
+
+                case "Semn":
+                    {
+                        variableLabel.Visible = false;
+                        alpha.Visible = false;
+                        if (Convert.ToDouble(intrareTb.Text) >= Convert.ToDouble(tetaUD.Value)) activareTb.Text = 1.ToString();
+                        if (Convert.ToDouble(intrareTb.Text) < Convert.ToDouble(tetaUD.Value)) activareTb.Text = "-1";
+                    }
+                    break;
+
+                case "Tangenta Hiperbolica":
+                    {
+                        variableLabel.Visible = true;
+                        alpha.Visible = true;
+                        variableLabel.Text = "g";
+                        activareTb.Text = ((Math.Pow(Math.E, (double)alpha.Value) * (Convert.ToDouble(intrareTb.Text) - Convert.ToDouble(tetaUD.Value)) - Math.Pow(Math.E, (double)-alpha.Value) * (Convert.ToDouble(intrareTb.Text) - Convert.ToDouble(tetaUD.Value))) / (Math.Pow(Math.E, (double)alpha.Value) * (Convert.ToDouble(intrareTb.Text) - Convert.ToDouble(tetaUD.Value)) + Math.Pow(Math.E, (double)-alpha.Value) * (Convert.ToDouble(intrareTb.Text) - Convert.ToDouble(tetaUD.Value)))).ToString();
                         break;
                     }
             }
