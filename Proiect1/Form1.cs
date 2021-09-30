@@ -51,14 +51,14 @@ namespace Proiect1
                    // Label label2 = new Label();
                   //  label2.Text = "W i=" + i.ToString();
                     NumericUpDown numericUpDown = new NumericUpDown();
-                    numericUpDown.Text = i.ToString();
+                    numericUpDown.Text = "0.00";
                     numericUpDown.Tag = "in";
                     numericUpDown.Increment = Convert.ToDecimal(0.01);
                     numericUpDown.DecimalPlaces = 2;
                     numericUpDown.Size = new Size(50, 20);
 
                     NumericUpDown numericUpDown2 = new NumericUpDown();
-                    numericUpDown2.Text = i.ToString();
+                    numericUpDown2.Text = "0.00";
                     numericUpDown2.Tag = "w";
                     numericUpDown2.Size = new Size(50, 20);
                     numericUpDown2.Increment = Convert.ToDecimal(0.01);
@@ -225,8 +225,8 @@ namespace Proiect1
 
                 case "Produs":
                     {
-                        double produs = 1;
-                        foreach(double intrare in produsIntrariList)
+                        decimal produs = 1;
+                        foreach(decimal intrare in produsIntrariList)
                         {
                             produs *= intrare;
                         }
@@ -235,8 +235,8 @@ namespace Proiect1
                     break;
                 case "Suma":
                     {
-                        double suma = 0;
-                        foreach (double intrare in produsIntrariList)
+                        decimal suma = 0;
+                        foreach (decimal intrare in produsIntrariList)
                         {
                             suma += intrare;
                         }
@@ -270,7 +270,8 @@ namespace Proiect1
 
                 case "Sigmoidala":
                     {
-                        activareTb.Text = 1 / (1 + Math.Pow(Math.E, (double)-alpha.Value)).ToString();
+                        activareTb.Text = (1 / (1 + Math.Pow(Math.E, (double)-alpha.Value)*(Convert.ToDouble(intrareTb.Text) - Convert.ToDouble(tetaUD.Value)))).ToString();
+                        break;
                     }
             }
         }
