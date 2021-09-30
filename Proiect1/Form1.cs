@@ -196,7 +196,8 @@ namespace Proiect1
         }
         private void addIntrariToList()
         {
-            foreach(Intrari intrari in intrariList)
+            produsIntrariList.Clear();
+            foreach (Intrari intrari in intrariList)
             {
                 produsIntrariList.Add(intrari.intr * intrari.w);
             }
@@ -212,7 +213,8 @@ namespace Proiect1
 
         private void refreshFunction()
         {
-            //Refresh functie activare
+            
+            //Refresh functie intrare
             
             switch (intrareDD.SelectedItem.ToString())
             {
@@ -244,8 +246,10 @@ namespace Proiect1
                     }
                     break;
             }
+            //---Refresh functie intrare
+
             //---Refresh functie activare
-            switch(activareDD.SelectedItem.ToString())
+            switch (activareDD.SelectedItem.ToString())
             {
                 case "Liniara":
                     {
@@ -308,6 +312,32 @@ namespace Proiect1
                         break;
                     }
             }
+            //---Refresh functie activare
+
+            //---Refresh functie iesire/iesire
+            if(binarCk.Checked==true)
+            {
+                if (Convert.ToDouble(activareTb.Text) < 0)
+                {
+                    functieIesireTb.Text = "-1";
+                    iesireTb.Text = "-1";
+                }
+                    
+                else
+
+                if (Convert.ToDouble(activareTb.Text) >= 0)
+                {
+                    iesireTb.Text = 1.ToString();
+                    functieIesireTb.Text = 1.ToString();
+                }
+                    
+            }
+            else
+            {
+                iesireTb.Text = activareTb.Text;
+                functieIesireTb.Text = activareTb.Text;
+            }
+            //---Refresh functie iesire/iesire
         }
 
     }

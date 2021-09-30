@@ -46,10 +46,10 @@ namespace Proiect1
             this.activareDD = new System.Windows.Forms.ComboBox();
             this.activareTb = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.binarCk = new System.Windows.Forms.CheckBox();
+            this.functieIesireTb = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.iesireTb = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -210,8 +210,8 @@ namespace Proiect1
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.checkBox1);
-            this.groupBox4.Controls.Add(this.textBox3);
+            this.groupBox4.Controls.Add(this.binarCk);
+            this.groupBox4.Controls.Add(this.functieIesireTb);
             this.groupBox4.Location = new System.Drawing.Point(577, 28);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(146, 75);
@@ -219,28 +219,28 @@ namespace Proiect1
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Functia de iesire";
             // 
-            // checkBox1
+            // binarCk
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(23, 49);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(50, 17);
-            this.checkBox1.TabIndex = 1;
-            this.checkBox1.Text = "Binar";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.binarCk.AutoSize = true;
+            this.binarCk.Location = new System.Drawing.Point(23, 49);
+            this.binarCk.Name = "binarCk";
+            this.binarCk.Size = new System.Drawing.Size(50, 17);
+            this.binarCk.TabIndex = 1;
+            this.binarCk.Text = "Binar";
+            this.binarCk.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // functieIesireTb
             // 
-            this.textBox3.Location = new System.Drawing.Point(20, 19);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(108, 20);
-            this.textBox3.TabIndex = 0;
-            this.textBox3.Text = "-0.02000000";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.functieIesireTb.Location = new System.Drawing.Point(20, 19);
+            this.functieIesireTb.Name = "functieIesireTb";
+            this.functieIesireTb.Size = new System.Drawing.Size(108, 20);
+            this.functieIesireTb.TabIndex = 0;
+            this.functieIesireTb.Text = "-0.02000000";
+            this.functieIesireTb.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.textBox4);
+            this.groupBox5.Controls.Add(this.iesireTb);
             this.groupBox5.Location = new System.Drawing.Point(577, 138);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(146, 59);
@@ -248,14 +248,14 @@ namespace Proiect1
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Iesirea";
             // 
-            // textBox4
+            // iesireTb
             // 
-            this.textBox4.Location = new System.Drawing.Point(14, 22);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(114, 20);
-            this.textBox4.TabIndex = 0;
-            this.textBox4.Text = "-0.02000000";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.iesireTb.Location = new System.Drawing.Point(14, 22);
+            this.iesireTb.Name = "iesireTb";
+            this.iesireTb.Size = new System.Drawing.Size(114, 20);
+            this.iesireTb.TabIndex = 0;
+            this.iesireTb.Text = "-0.02000000";
+            this.iesireTb.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // groupBox6
             // 
@@ -363,9 +363,9 @@ namespace Proiect1
         private System.Windows.Forms.NumericUpDown tetaUD;
         private System.Windows.Forms.ComboBox activareDD;
         private System.Windows.Forms.TextBox activareTb;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.CheckBox binarCk;
+        private System.Windows.Forms.TextBox functieIesireTb;
+        private System.Windows.Forms.TextBox iesireTb;
         private System.Windows.Forms.Label variableLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
