@@ -23,33 +23,22 @@ namespace Proiect1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //new Thread(() =>
-            //{
-            //    Thread.CurrentThread.IsBackground = true;
-            //    /* run your code here */
-            //    addIntrariObjToList();
-            //    addIntrariToList();
-            //    refreshFunction();
-            //}).Start();
+
             flowLayoutPanel1.AutoScroll = true;
+            updateIntrari();
             
 
 
         }
-        private void deleteRows()
-        {
-            flowLayoutPanel1.Controls.Clear();
-        }
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        private void updateIntrari()
         {
             nrintrari = Convert.ToInt32(numericUpDown1.Value);
-         if(nrintrari > flowLayoutPanel1.Controls.Count / 3)
-            for(int i = flowLayoutPanel1.Controls.Count /3 ; i<nrintrari;i++)
-            {
+            if (nrintrari > flowLayoutPanel1.Controls.Count / 3)
+                for (int i = flowLayoutPanel1.Controls.Count / 3; i < nrintrari; i++)
+                {
                     Label label = new Label();
-                    label.Text = "In i="+i.ToString() + "           W i=" + i.ToString();
-                   // Label label2 = new Label();
-                  //  label2.Text = "W i=" + i.ToString();
+                    label.Text = "In i=" + i.ToString() + "           W i=" + i.ToString();
+
                     NumericUpDown numericUpDown = new NumericUpDown();
                     numericUpDown.Text = "0.00";
                     numericUpDown.Tag = "in";
@@ -66,98 +55,26 @@ namespace Proiect1
                     numericUpDown2.DecimalPlaces = 2;
                     numericUpDown2.ValueChanged += new EventHandler(refreshValues);
                     flowLayoutPanel1.Controls.Add(label);
-                  //  flowLayoutPanel1.Controls.Add(label2);
+
                     flowLayoutPanel1.Controls.Add(numericUpDown);
                     flowLayoutPanel1.Controls.Add(numericUpDown2);
-            }
+                }
             else
-                if (nrintrari < flowLayoutPanel1.Controls.Count / 3 && flowLayoutPanel1.Controls.Count%3==0)
+                   if (nrintrari < flowLayoutPanel1.Controls.Count / 3 && flowLayoutPanel1.Controls.Count % 3 == 0)
             {
-                for (int i = flowLayoutPanel1.Controls.Count-1; i >= nrintrari*3 ; i--)
+                for (int i = flowLayoutPanel1.Controls.Count - 1; i >= nrintrari * 3; i--)
                 {
                     flowLayoutPanel1.Controls.RemoveAt(i);
-                    
                 }
-                    
-             
             }
-            //   while(flowLayoutPanel1.Controls.Count/2<nrintrari)
-            //   {
-            //       if (numericUpDown1.Value > nrintrari)
-            //       {
-            //           nrintrari++;
-            //           NumericUpDown newTextbox = new NumericUpDown();
-            //           newTextbox.Text = nrintrari.ToString();
-            //           newTextbox.Tag = nrintrari;
-            //           newTextbox.Size = new Size(40, 20);
-
-            //           NumericUpDown newTextbox2 = new NumericUpDown();
-            //           newTextbox2.Text = nrintrari.ToString();
-            //           newTextbox2.Tag = nrintrari;
-            //           newTextbox2.Size = new Size(40, 20);
-
-            //           flowLayoutPanel1.Controls.Add(newTextbox);
-            //           flowLayoutPanel1.Controls.Add(newTextbox2);
-            //       }
-            //       else
-            //if (numericUpDown1.Value < nrintrari)
-            //       {
-            //           flowLayoutPanel1.Controls.RemoveAt(nrintrari);
-            //           foreach (Control control in flowLayoutPanel1.Controls)
-            //           {
-            //               if (control is NumericUpDown)
-            //               {
-            //                   NumericUpDown NumericControl = (NumericUpDown)control;
-            //                   if (NumericControl.Tag.Equals(nrintrari))
-            //                   {
-            //                       flowLayoutPanel1.Controls.Remove(NumericControl);
-
-            //                   }
-
-            //               }
-            //           }
-            //           nrintrari--;
-            //       }
-            //   }
-
-            //  intrari.Add(new Intrari(0,0));
-
-            //  deleteRows();
-            /*
-              int locationx = 15;
-              int locationy = 60;
-              for(int i = 1; i <= numericUpDown1.Value; i++)
-              {
-                  NumericUpDown newTextbox = new NumericUpDown();        
-                  newTextbox.Text = i.ToString();
-                  newTextbox.Tag = i;
-                  newTextbox.Size = new Size(40, 20);
-                  // newTextbox.Location = new Point(locationx, locationy);
-                  NumericUpDown newTextbox2 = new NumericUpDown();
-                  newTextbox2.Text = i.ToString();
-                  newTextbox2.Tag = i;
-                  newTextbox2.Size = new Size(40, 20);
-               //   newTextbox2.Location = new Point(locationx+65, locationy);
-                  flowLayoutPanel1.Controls.Add(newTextbox);
-                  flowLayoutPanel1.Controls.Add(newTextbox2);
-                  // locationy += 20;
-
-              }
-              Console.WriteLine(flowLayoutPanel1.Controls);
-              Console.WriteLine(intrari.Count);
-
-              foreach(Control control in flowLayoutPanel1.Controls)
-              {
-                  if(control is NumericUpDown)
-                  {
-                      NumericUpDown NumericControl = (NumericUpDown)control;
-                      if(NumericControl.Tag.Equals(1) || NumericControl.Tag.Equals(2))
-                      {
-                         // flowLayoutPanel1.Controls.Remove(NumericControl);
-                      }
-                  }
-              }
-            */
+        }
+        private void deleteRows()
+        {
+            flowLayoutPanel1.Controls.Clear();
+        }
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            updateIntrari();
         }
 
         private void refreshValues(object sender, EventArgs e)
