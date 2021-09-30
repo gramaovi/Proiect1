@@ -38,13 +38,16 @@ namespace Proiect1
                     NumericUpDown newTextbox = new NumericUpDown();
                     newTextbox.Text = i.ToString();
                     newTextbox.Tag = i;
+                    newTextbox.Increment = Convert.ToDecimal(0.01);
+                    newTextbox.DecimalPlaces = 2;
                     newTextbox.Size = new Size(40, 20);
 
                     NumericUpDown newTextbox2 = new NumericUpDown();
                     newTextbox2.Text = i.ToString();
                     newTextbox2.Tag = i;
                     newTextbox2.Size = new Size(40, 20);
-
+                    newTextbox2.Increment = Convert.ToDecimal(0.01);
+                    newTextbox2.DecimalPlaces = 2;
                     flowLayoutPanel1.Controls.Add(newTextbox);
                     flowLayoutPanel1.Controls.Add(newTextbox2);
             }
