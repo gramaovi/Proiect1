@@ -13,7 +13,8 @@ namespace Proiect1
     public partial class Form1 : Form
     {
         int nrintrari;
-        List<Intrari> intrari=new List<Intrari>();
+        List<Intrari> intrariList=new List<Intrari>();
+        List<double> produsIntrariList = new List<double>();
         public Form1()
         {
             InitializeComponent();
@@ -32,29 +33,35 @@ namespace Proiect1
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             nrintrari = Convert.ToInt32(numericUpDown1.Value);
-         if(nrintrari > flowLayoutPanel1.Controls.Count / 2)
-            for(int i = flowLayoutPanel1.Controls.Count /2 ; i<nrintrari;i++)
+         if(nrintrari > flowLayoutPanel1.Controls.Count / 3)
+            for(int i = flowLayoutPanel1.Controls.Count /3 ; i<nrintrari;i++)
             {
+                    Label label = new Label();
+                    label.Text = "In i="+i.ToString() + "           W i=" + i.ToString();
+                   // Label label2 = new Label();
+                  //  label2.Text = "W i=" + i.ToString();
                     NumericUpDown numericUpDown = new NumericUpDown();
                     numericUpDown.Text = i.ToString();
-                    numericUpDown.Tag = i;
+                    numericUpDown.Tag = "in";
                     numericUpDown.Increment = Convert.ToDecimal(0.01);
                     numericUpDown.DecimalPlaces = 2;
                     numericUpDown.Size = new Size(50, 20);
 
                     NumericUpDown numericUpDown2 = new NumericUpDown();
                     numericUpDown2.Text = i.ToString();
-                    numericUpDown2.Tag = i;
+                    numericUpDown2.Tag = "w";
                     numericUpDown2.Size = new Size(50, 20);
                     numericUpDown2.Increment = Convert.ToDecimal(0.01);
                     numericUpDown2.DecimalPlaces = 2;
+                    flowLayoutPanel1.Controls.Add(label);
+                  //  flowLayoutPanel1.Controls.Add(label2);
                     flowLayoutPanel1.Controls.Add(numericUpDown);
                     flowLayoutPanel1.Controls.Add(numericUpDown2);
             }
             else
-                if (nrintrari < flowLayoutPanel1.Controls.Count / 2 && flowLayoutPanel1.Controls.Count%2==0)
+                if (nrintrari < flowLayoutPanel1.Controls.Count / 3 && flowLayoutPanel1.Controls.Count%3==0)
             {
-                for (int i = flowLayoutPanel1.Controls.Count-1; i >= nrintrari*2 ; i--)
+                for (int i = flowLayoutPanel1.Controls.Count-1; i >= nrintrari*3 ; i--)
                 {
                     flowLayoutPanel1.Controls.RemoveAt(i);
                     
@@ -145,5 +152,89 @@ namespace Proiect1
         {
 
         }
+        private void addIntrariObjToList()
+        {
+            intrariList.Clear();
+            bool addFlag = false;
+            double inV=0;
+            double wV=0;
+          
+            foreach (Control control in flowLayoutPanel1.Controls)
+            {
+                if (control is NumericUpDown)
+                {
+                    if (addFlag == true)
+                        addFlag = false;
+                    else
+                        addFlag = true;
+
+                    NumericUpDown NumericControl = (NumericUpDown)control;
+                    switch (NumericControl.Tag)
+                    {
+                        case "in": inV = Convert.ToDouble(NumericControl.Value);
+                            break;
+                        case "w": wV = Convert.ToDouble(NumericControl.Value);
+                            break;
+                    }
+                
+                    if(addFlag==false)
+                    intrariList.Add(new Intrari(inV, wV));
+                }
+               
+            }
+            
+        }
+        private void addIntrariToList()
+        {
+            foreach(Intrari intrari in intrariList)
+            {
+                produsIntrariList.Add(intrari.intr * intrari.w);
+            }
+        }
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            
+            addIntrariObjToList();
+            addIntrariToList();
+            refreshFunction();
+
+        }
+
+        private void refreshFunction()
+        {
+            double maxValue;
+            
+            switch (intrareDD.SelectedItem.ToString())
+            {
+
+                case "Maxim": intrareTb.Text= produsIntrariList.Max<double>().ToString();
+                    break;
+
+                case "Minim": intrareTb.Text = produsIntrariList.Min<double>().ToString();
+                    break;
+
+                case "Produs":
+                    {
+                        double produs = 1;
+                        foreach(double intrare in produsIntrariList)
+                        {
+                            produs *= intrare;
+                        }
+                        intrareTb.Text = produs.ToString();
+                    }
+                    break;
+                case "Suma":
+                    {
+                        double suma = 0;
+                        foreach (double intrare in produsIntrariList)
+                        {
+                            suma += intrare;
+                        }
+                        intrareTb.Text = suma.ToString();
+                    }
+                    break;
+            }
+        }
+     
     }
 }

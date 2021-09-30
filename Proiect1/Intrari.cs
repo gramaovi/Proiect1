@@ -8,7 +8,7 @@ namespace Proiect1
 {
     class Intrari
     {
-        private double intr, w;
+        public double intr, w;
         public Intrari(double intr, double w)
         {
             this.intr = intr;
