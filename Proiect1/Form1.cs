@@ -24,6 +24,8 @@ namespace Proiect1
         {
            
             flowLayoutPanel1.AutoScroll = true;
+            
+
 
         }
         private void deleteRows()
@@ -202,7 +204,7 @@ namespace Proiect1
 
         private void refreshFunction()
         {
-            double maxValue;
+            //Refresh functie activare
             
             switch (intrareDD.SelectedItem.ToString())
             {
@@ -234,7 +236,31 @@ namespace Proiect1
                     }
                     break;
             }
+            //---Refresh functie activare
+            switch(activareDD.SelectedItem.ToString())
+            {
+                case "Liniara":
+                    {
+                        tetaUD.Minimum = -1;
+                        tetaUD.Maximum = 1;
+                        if (Convert.ToDecimal(intrareTb.Text) > alpha.Value)
+                        {
+                            activareTb.Text = 1.ToString();
+                        }
+                        else
+                            if (Convert.ToDecimal(intrareTb.Text) >= -alpha.Value && Convert.ToDecimal(intrareTb.Text) <= alpha.Value)
+                            {
+                            activareTb.Text = ((Convert.ToDecimal(intrareTb.Text) - tetaUD.Value) / alpha.Value).ToString();
+                            }
+                        else
+                            if(Convert.ToDecimal(intrareTb.Text)<-alpha.Value)
+                        {
+                            activareTb.Text = "-1";
+                        }
+                    } 
+                    break;
+            }
         }
-     
+
     }
 }

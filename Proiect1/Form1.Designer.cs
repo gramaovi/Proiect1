@@ -41,10 +41,10 @@ namespace Proiect1
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.alpha = new System.Windows.Forms.NumericUpDown();
+            this.tetaUD = new System.Windows.Forms.NumericUpDown();
+            this.activareDD = new System.Windows.Forms.ComboBox();
+            this.activareTb = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -59,8 +59,8 @@ namespace Proiect1
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alpha)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tetaUD)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -124,10 +124,10 @@ namespace Proiect1
             // 
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.numericUpDown3);
-            this.groupBox3.Controls.Add(this.numericUpDown2);
-            this.groupBox3.Controls.Add(this.comboBox2);
-            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.alpha);
+            this.groupBox3.Controls.Add(this.tetaUD);
+            this.groupBox3.Controls.Add(this.activareDD);
+            this.groupBox3.Controls.Add(this.activareTb);
             this.groupBox3.Location = new System.Drawing.Point(334, 28);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(184, 169);
@@ -157,56 +157,56 @@ namespace Proiect1
             this.label1.TabIndex = 6;
             this.label1.Text = "⊖";
             // 
-            // numericUpDown3
+            // alpha
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(96, 133);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(59, 20);
-            this.numericUpDown3.TabIndex = 5;
-            this.numericUpDown3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown3.Value = new decimal(new int[] {
+            this.alpha.Location = new System.Drawing.Point(96, 133);
+            this.alpha.Name = "alpha";
+            this.alpha.Size = new System.Drawing.Size(59, 20);
+            this.alpha.TabIndex = 5;
+            this.alpha.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.alpha.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
             // 
-            // numericUpDown2
+            // tetaUD
             // 
-            this.numericUpDown2.DecimalPlaces = 2;
-            this.numericUpDown2.Increment = new decimal(new int[] {
+            this.tetaUD.DecimalPlaces = 2;
+            this.tetaUD.Increment = new decimal(new int[] {
             1,
             0,
             0,
             131072});
-            this.numericUpDown2.Location = new System.Drawing.Point(96, 98);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(59, 20);
-            this.numericUpDown2.TabIndex = 4;
-            this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tetaUD.Location = new System.Drawing.Point(96, 98);
+            this.tetaUD.Name = "tetaUD";
+            this.tetaUD.Size = new System.Drawing.Size(59, 20);
+            this.tetaUD.TabIndex = 4;
+            this.tetaUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // comboBox2
+            // activareDD
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.activareDD.FormattingEnabled = true;
+            this.activareDD.Items.AddRange(new object[] {
             "Liniara",
             "Semn",
             "Sigmoidala",
             "Tangenta Hiprebolica",
             "Treapta"});
-            this.comboBox2.Location = new System.Drawing.Point(26, 64);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(129, 21);
-            this.comboBox2.TabIndex = 3;
-            this.comboBox2.Text = "Liniara";
+            this.activareDD.Location = new System.Drawing.Point(26, 64);
+            this.activareDD.Name = "activareDD";
+            this.activareDD.Size = new System.Drawing.Size(129, 21);
+            this.activareDD.TabIndex = 3;
+            this.activareDD.Text = "Liniara";
             // 
-            // textBox2
+            // activareTb
             // 
-            this.textBox2.Location = new System.Drawing.Point(26, 29);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(129, 20);
-            this.textBox2.TabIndex = 2;
-            this.textBox2.Text = "-0.02000000";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.activareTb.Location = new System.Drawing.Point(26, 29);
+            this.activareTb.Name = "activareTb";
+            this.activareTb.Size = new System.Drawing.Size(129, 20);
+            this.activareTb.TabIndex = 2;
+            this.activareTb.Text = "-0.02000000";
+            this.activareTb.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // groupBox4
             // 
@@ -333,8 +333,8 @@ namespace Proiect1
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alpha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tetaUD)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -359,10 +359,10 @@ namespace Proiect1
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.ComboBox intrareDD;
         private System.Windows.Forms.TextBox intrareTb;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.NumericUpDown alpha;
+        private System.Windows.Forms.NumericUpDown tetaUD;
+        private System.Windows.Forms.ComboBox activareDD;
+        private System.Windows.Forms.TextBox activareTb;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
