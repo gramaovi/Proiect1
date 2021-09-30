@@ -35,21 +35,21 @@ namespace Proiect1
          if(nrintrari > flowLayoutPanel1.Controls.Count / 2)
             for(int i = flowLayoutPanel1.Controls.Count /2 ; i<nrintrari;i++)
             {
-                    NumericUpDown newTextbox = new NumericUpDown();
-                    newTextbox.Text = i.ToString();
-                    newTextbox.Tag = i;
-                    newTextbox.Increment = Convert.ToDecimal(0.01);
-                    newTextbox.DecimalPlaces = 2;
-                    newTextbox.Size = new Size(50, 20);
+                    NumericUpDown numericUpDown = new NumericUpDown();
+                    numericUpDown.Text = i.ToString();
+                    numericUpDown.Tag = i;
+                    numericUpDown.Increment = Convert.ToDecimal(0.01);
+                    numericUpDown.DecimalPlaces = 2;
+                    numericUpDown.Size = new Size(50, 20);
 
-                    NumericUpDown newTextbox2 = new NumericUpDown();
-                    newTextbox2.Text = i.ToString();
-                    newTextbox2.Tag = i;
-                    newTextbox2.Size = new Size(50, 20);
-                    newTextbox2.Increment = Convert.ToDecimal(0.01);
-                    newTextbox2.DecimalPlaces = 2;
-                    flowLayoutPanel1.Controls.Add(newTextbox);
-                    flowLayoutPanel1.Controls.Add(newTextbox2);
+                    NumericUpDown numericUpDown2 = new NumericUpDown();
+                    numericUpDown2.Text = i.ToString();
+                    numericUpDown2.Tag = i;
+                    numericUpDown2.Size = new Size(50, 20);
+                    numericUpDown2.Increment = Convert.ToDecimal(0.01);
+                    numericUpDown2.DecimalPlaces = 2;
+                    flowLayoutPanel1.Controls.Add(numericUpDown);
+                    flowLayoutPanel1.Controls.Add(numericUpDown2);
             }
             else
                 if (nrintrari < flowLayoutPanel1.Controls.Count / 2 && flowLayoutPanel1.Controls.Count%2==0)
