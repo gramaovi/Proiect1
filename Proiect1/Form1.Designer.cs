@@ -32,7 +32,6 @@ namespace Proiect1
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -54,8 +53,6 @@ namespace Proiect1
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.refreshButton = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -66,7 +63,6 @@ namespace Proiect1
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -110,6 +106,7 @@ namespace Proiect1
             this.intrareDD.Size = new System.Drawing.Size(129, 21);
             this.intrareDD.TabIndex = 1;
             this.intrareDD.Text = "Maxim";
+            this.intrareDD.SelectedIndexChanged += new System.EventHandler(this.FunctiaIntrareDDRefresh);
             // 
             // intrareTb
             // 
@@ -169,6 +166,7 @@ namespace Proiect1
             0,
             0,
             0});
+            this.alpha.ValueChanged += new System.EventHandler(this.AlphaUDRefresh);
             // 
             // tetaUD
             // 
@@ -183,6 +181,7 @@ namespace Proiect1
             this.tetaUD.Size = new System.Drawing.Size(59, 20);
             this.tetaUD.TabIndex = 4;
             this.tetaUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tetaUD.ValueChanged += new System.EventHandler(this.TetaUDRefresh);
             // 
             // activareDD
             // 
@@ -191,13 +190,14 @@ namespace Proiect1
             "Liniara",
             "Semn",
             "Sigmoidala",
-            "Tangenta Hiprebolica",
+            "Tangenta Hiperbolica",
             "Treapta"});
             this.activareDD.Location = new System.Drawing.Point(26, 64);
             this.activareDD.Name = "activareDD";
             this.activareDD.Size = new System.Drawing.Size(129, 21);
             this.activareDD.TabIndex = 3;
             this.activareDD.Text = "Liniara";
+            this.activareDD.SelectedIndexChanged += new System.EventHandler(this.FunctiaActivareDDRefresh);
             // 
             // activareTb
             // 
@@ -228,6 +228,7 @@ namespace Proiect1
             this.binarCk.TabIndex = 1;
             this.binarCk.Text = "Binar";
             this.binarCk.UseVisualStyleBackColor = true;
+            this.binarCk.CheckedChanged += new System.EventHandler(this.BinarCkRefresh);
             // 
             // functieIesireTb
             // 
@@ -276,8 +277,11 @@ namespace Proiect1
             this.chart1.Location = new System.Drawing.Point(15, 19);
             this.chart1.Name = "chart1";
             series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series2.Legend = "Legend1";
-            series2.Name = "Series1";
+            series2.Name = "Intrare";
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(533, 199);
             this.chart1.TabIndex = 0;
@@ -292,32 +296,11 @@ namespace Proiect1
             this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.refreshButton});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(748, 25);
-            this.toolStrip1.TabIndex = 7;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // refreshButton
-            // 
-            this.refreshButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.refreshButton.Image = ((System.Drawing.Image)(resources.GetObject("refreshButton.Image")));
-            this.refreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(23, 22);
-            this.refreshButton.Text = "toolStripButton1";
-            this.refreshButton.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 464);
-            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
@@ -342,10 +325,7 @@ namespace Proiect1
             this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -371,8 +351,6 @@ namespace Proiect1
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton refreshButton;
     }
 }
 

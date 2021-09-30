@@ -56,6 +56,7 @@ namespace Proiect1
                     numericUpDown.Increment = Convert.ToDecimal(0.01);
                     numericUpDown.DecimalPlaces = 2;
                     numericUpDown.Size = new Size(50, 20);
+                    numericUpDown.ValueChanged += new EventHandler(refreshValues);
 
                     NumericUpDown numericUpDown2 = new NumericUpDown();
                     numericUpDown2.Text = "0.00";
@@ -63,6 +64,7 @@ namespace Proiect1
                     numericUpDown2.Size = new Size(50, 20);
                     numericUpDown2.Increment = Convert.ToDecimal(0.01);
                     numericUpDown2.DecimalPlaces = 2;
+                    numericUpDown2.ValueChanged += new EventHandler(refreshValues);
                     flowLayoutPanel1.Controls.Add(label);
                   //  flowLayoutPanel1.Controls.Add(label2);
                     flowLayoutPanel1.Controls.Add(numericUpDown);
@@ -156,6 +158,11 @@ namespace Proiect1
                   }
               }
             */
+        }
+
+        private void refreshValues(object sender, EventArgs e)
+        {
+            refreshUI();
         }
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
@@ -338,7 +345,48 @@ namespace Proiect1
                 functieIesireTb.Text = activareTb.Text;
             }
             //---Refresh functie iesire/iesire
+
+            // Refresh chart
+           
+            this.chart1.Series["Intrare"].Points.AddXY(-4 , -1);
+            this.chart1.Series["Intrare"].Points.AddXY(intrareTb.Text, activareTb.Text);
+            this.chart1.Series["Intrare"].Points.AddXY(6, 1);
+            // --Refresh chart
+        }
+        private void refreshUI()
+        {
+            addIntrariObjToList();
+            addIntrariToList();
+            refreshFunction();
+        }
+        private void refereshNrIntrari(object sender, EventArgs e)
+        {
+            //refreshUI();
         }
 
+        private void FunctiaIntrareDDRefresh(object sender, EventArgs e)
+        {
+            refreshUI();
+        }
+
+        private void FunctiaActivareDDRefresh(object sender, EventArgs e)
+        {
+            refreshUI();
+        }
+
+        private void TetaUDRefresh(object sender, EventArgs e)
+        {
+            refreshUI();
+        }
+
+        private void AlphaUDRefresh(object sender, EventArgs e)
+        {
+            refreshUI();
+        }
+
+        private void BinarCkRefresh(object sender, EventArgs e)
+        {
+            refreshUI();
+        }
     }
 }
