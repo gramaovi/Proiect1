@@ -60,18 +60,7 @@ namespace Proiect1
                     
                 }
                     
-                //    foreach (Control control in flowLayoutPanel1.Controls)
-                //{
-
-                //    if (control is NumericUpDown)
-                //    {
-                //        NumericUpDown NumericControl = (NumericUpDown)control;
-                //        if (NumericControl.Tag.Equals(i) )
-                //        {
-                //             flowLayoutPanel1.Controls.Remove(NumericControl);
-                //        }
-                //    }
-                //}
+             
             }
             //   while(flowLayoutPanel1.Controls.Count/2<nrintrari)
             //   {
