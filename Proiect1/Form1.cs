@@ -48,7 +48,28 @@ namespace Proiect1
                     flowLayoutPanel1.Controls.Add(newTextbox);
                     flowLayoutPanel1.Controls.Add(newTextbox2);
             }
-       
+            else
+                if (nrintrari < flowLayoutPanel1.Controls.Count / 2 && flowLayoutPanel1.Controls.Count%2==0)
+            {
+                for (int i = flowLayoutPanel1.Controls.Count-1; i >= nrintrari*2 ; i--)
+                {
+                    flowLayoutPanel1.Controls.RemoveAt(i);
+                    
+                }
+                    
+                //    foreach (Control control in flowLayoutPanel1.Controls)
+                //{
+
+                //    if (control is NumericUpDown)
+                //    {
+                //        NumericUpDown NumericControl = (NumericUpDown)control;
+                //        if (NumericControl.Tag.Equals(i) )
+                //        {
+                //             flowLayoutPanel1.Controls.Remove(NumericControl);
+                //        }
+                //    }
+                //}
+            }
             //   while(flowLayoutPanel1.Controls.Count/2<nrintrari)
             //   {
             //       if (numericUpDown1.Value > nrintrari)
