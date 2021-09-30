@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,7 +15,7 @@ namespace Proiect1
     {
         int nrintrari;
         List<Intrari> intrariList=new List<Intrari>();
-        List<double> produsIntrariList = new List<double>();
+        List<decimal> produsIntrariList = new List<decimal>();
         public Form1()
         {
             InitializeComponent();
@@ -22,7 +23,14 @@ namespace Proiect1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+            //new Thread(() =>
+            //{
+            //    Thread.CurrentThread.IsBackground = true;
+            //    /* run your code here */
+            //    addIntrariObjToList();
+            //    addIntrariToList();
+            //    refreshFunction();
+            //}).Start();
             flowLayoutPanel1.AutoScroll = true;
             
 
@@ -158,8 +166,8 @@ namespace Proiect1
         {
             intrariList.Clear();
             bool addFlag = false;
-            double inV=0;
-            double wV=0;
+            decimal inV=0;
+            decimal wV=0;
           
             foreach (Control control in flowLayoutPanel1.Controls)
             {
@@ -173,9 +181,9 @@ namespace Proiect1
                     NumericUpDown NumericControl = (NumericUpDown)control;
                     switch (NumericControl.Tag)
                     {
-                        case "in": inV = Convert.ToDouble(NumericControl.Value);
+                        case "in": inV = Convert.ToDecimal(NumericControl.Value);
                             break;
-                        case "w": wV = Convert.ToDouble(NumericControl.Value);
+                        case "w": wV = Convert.ToDecimal(NumericControl.Value);
                             break;
                     }
                 
@@ -209,10 +217,10 @@ namespace Proiect1
             switch (intrareDD.SelectedItem.ToString())
             {
 
-                case "Maxim": intrareTb.Text= produsIntrariList.Max<double>().ToString();
+                case "Maxim": intrareTb.Text= produsIntrariList.Max<decimal>().ToString();
                     break;
 
-                case "Minim": intrareTb.Text = produsIntrariList.Min<double>().ToString();
+                case "Minim": intrareTb.Text = produsIntrariList.Min<decimal>().ToString();
                     break;
 
                 case "Produs":
@@ -259,6 +267,11 @@ namespace Proiect1
                         }
                     } 
                     break;
+
+                case "Sigmoidala":
+                    {
+                        activareTb.Text = 1 / (1 + Math.Pow(Math.E, (double)-alpha.Value)).ToString();
+                    }
             }
         }
 

@@ -8,8 +8,8 @@ namespace Proiect1
 {
     class Intrari
     {
-        public double intr, w;
-        public Intrari(double intr, double w)
+        public decimal intr, w;
+        public Intrari(decimal intr, decimal w)
         {
             this.intr = intr;
             this.w = w;
