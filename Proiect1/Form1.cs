@@ -32,12 +32,12 @@ namespace Proiect1
         }
         private void updateIntrari()
         {
-            nrintrari = Convert.ToInt32(numericUpDown1.Value);
+            nrintrari = Convert.ToInt32(nupDendrite.Value);
             if (nrintrari > flowLayoutPanel1.Controls.Count / 3)
                 for (int i = flowLayoutPanel1.Controls.Count / 3; i < nrintrari; i++)
                 {
                     Label label = new Label();
-                    label.Text = "In i=" + i.ToString() + "           W i=" + i.ToString();
+                    label.Text = "   X["+i.ToString()+"]" + "            W[" + i.ToString()+"]";
 
                     NumericUpDown numericUpDown = new NumericUpDown();
                     numericUpDown.Text = "0.00";
@@ -125,14 +125,6 @@ namespace Proiect1
             {
                 produsIntrariList.Add(intrari.intr * intrari.w);
             }
-        }
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            
-            addIntrariObjToList();
-            addIntrariToList();
-            refreshFunction();
-
         }
 
         private void refreshFunction()
@@ -264,7 +256,7 @@ namespace Proiect1
             //---Refresh functie iesire/iesire
 
             // Refresh chart
-           
+            chart1.Series["Intrare"].Points.Clear();
             this.chart1.Series["Intrare"].Points.AddXY(-4 , -1);
             this.chart1.Series["Intrare"].Points.AddXY(intrareTb.Text, activareTb.Text);
             this.chart1.Series["Intrare"].Points.AddXY(6, 1);
@@ -272,9 +264,11 @@ namespace Proiect1
         }
         private void refreshUI()
         {
+            
             addIntrariObjToList();
             addIntrariToList();
             refreshFunction();
+      
         }
         private void refereshNrIntrari(object sender, EventArgs e)
         {
