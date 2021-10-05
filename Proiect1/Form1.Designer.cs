@@ -29,24 +29,24 @@ namespace Proiect1
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.intrareDD = new System.Windows.Forms.ComboBox();
-            this.intrareTb = new System.Windows.Forms.TextBox();
+            this.dropDownIntrare = new System.Windows.Forms.ComboBox();
+            this.textBoxIntrare = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.variableLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.alpha = new System.Windows.Forms.NumericUpDown();
-            this.tetaUD = new System.Windows.Forms.NumericUpDown();
-            this.activareDD = new System.Windows.Forms.ComboBox();
-            this.activareTb = new System.Windows.Forms.TextBox();
+            this.labelVariable = new System.Windows.Forms.Label();
+            this.labelTeta = new System.Windows.Forms.Label();
+            this.nupVariable = new System.Windows.Forms.NumericUpDown();
+            this.nupTeta = new System.Windows.Forms.NumericUpDown();
+            this.dropDownActivare = new System.Windows.Forms.ComboBox();
+            this.textBoxActivare = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.binarCk = new System.Windows.Forms.CheckBox();
-            this.functieIesireTb = new System.Windows.Forms.TextBox();
+            this.textBoxIesire = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.iesireTb = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -56,8 +56,8 @@ namespace Proiect1
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.alpha)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tetaUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupVariable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupTeta)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -84,8 +84,8 @@ namespace Proiect1
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.intrareDD);
-            this.groupBox2.Controls.Add(this.intrareTb);
+            this.groupBox2.Controls.Add(this.dropDownIntrare);
+            this.groupBox2.Controls.Add(this.textBoxIntrare);
             this.groupBox2.Location = new System.Drawing.Point(157, 28);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(160, 85);
@@ -93,38 +93,38 @@ namespace Proiect1
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Functia de intrare";
             // 
-            // intrareDD
+            // dropDownIntrare
             // 
-            this.intrareDD.FormattingEnabled = true;
-            this.intrareDD.Items.AddRange(new object[] {
+            this.dropDownIntrare.FormattingEnabled = true;
+            this.dropDownIntrare.Items.AddRange(new object[] {
             "Maxim",
             "Minim",
             "Produs",
             "Suma"});
-            this.intrareDD.Location = new System.Drawing.Point(15, 54);
-            this.intrareDD.Name = "intrareDD";
-            this.intrareDD.Size = new System.Drawing.Size(129, 21);
-            this.intrareDD.TabIndex = 1;
-            this.intrareDD.Text = "Maxim";
-            this.intrareDD.SelectedIndexChanged += new System.EventHandler(this.FunctiaIntrareDDRefresh);
+            this.dropDownIntrare.Location = new System.Drawing.Point(15, 54);
+            this.dropDownIntrare.Name = "dropDownIntrare";
+            this.dropDownIntrare.Size = new System.Drawing.Size(129, 21);
+            this.dropDownIntrare.TabIndex = 1;
+            this.dropDownIntrare.Text = "Maxim";
+            this.dropDownIntrare.SelectedIndexChanged += new System.EventHandler(this.FunctiaIntrareDDRefresh);
             // 
-            // intrareTb
+            // textBoxIntrare
             // 
-            this.intrareTb.Location = new System.Drawing.Point(15, 19);
-            this.intrareTb.Name = "intrareTb";
-            this.intrareTb.Size = new System.Drawing.Size(129, 20);
-            this.intrareTb.TabIndex = 0;
-            this.intrareTb.Text = "0.00000000";
-            this.intrareTb.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxIntrare.Location = new System.Drawing.Point(15, 19);
+            this.textBoxIntrare.Name = "textBoxIntrare";
+            this.textBoxIntrare.Size = new System.Drawing.Size(129, 20);
+            this.textBoxIntrare.TabIndex = 0;
+            this.textBoxIntrare.Text = "0.00000000";
+            this.textBoxIntrare.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.variableLabel);
-            this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.alpha);
-            this.groupBox3.Controls.Add(this.tetaUD);
-            this.groupBox3.Controls.Add(this.activareDD);
-            this.groupBox3.Controls.Add(this.activareTb);
+            this.groupBox3.Controls.Add(this.labelVariable);
+            this.groupBox3.Controls.Add(this.labelTeta);
+            this.groupBox3.Controls.Add(this.nupVariable);
+            this.groupBox3.Controls.Add(this.nupTeta);
+            this.groupBox3.Controls.Add(this.dropDownActivare);
+            this.groupBox3.Controls.Add(this.textBoxActivare);
             this.groupBox3.Location = new System.Drawing.Point(334, 28);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(184, 169);
@@ -132,92 +132,92 @@ namespace Proiect1
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Functia de activare";
             // 
-            // variableLabel
+            // labelVariable
             // 
-            this.variableLabel.AutoSize = true;
-            this.variableLabel.BackColor = System.Drawing.Color.Transparent;
-            this.variableLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.variableLabel.Location = new System.Drawing.Point(59, 122);
-            this.variableLabel.Name = "variableLabel";
-            this.variableLabel.Size = new System.Drawing.Size(30, 31);
-            this.variableLabel.TabIndex = 7;
-            this.variableLabel.Text = "α";
+            this.labelVariable.AutoSize = true;
+            this.labelVariable.BackColor = System.Drawing.Color.Transparent;
+            this.labelVariable.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelVariable.Location = new System.Drawing.Point(59, 122);
+            this.labelVariable.Name = "labelVariable";
+            this.labelVariable.Size = new System.Drawing.Size(30, 31);
+            this.labelVariable.TabIndex = 7;
+            this.labelVariable.Text = "α";
             // 
-            // label1
+            // labelTeta
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(56, 86);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 37);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "⊖";
+            this.labelTeta.AutoSize = true;
+            this.labelTeta.BackColor = System.Drawing.Color.Transparent;
+            this.labelTeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTeta.Location = new System.Drawing.Point(56, 86);
+            this.labelTeta.Name = "labelTeta";
+            this.labelTeta.Size = new System.Drawing.Size(37, 37);
+            this.labelTeta.TabIndex = 6;
+            this.labelTeta.Text = "⊖";
             // 
-            // alpha
+            // nupVariable
             // 
-            this.alpha.Location = new System.Drawing.Point(96, 133);
-            this.alpha.Minimum = new decimal(new int[] {
+            this.nupVariable.Location = new System.Drawing.Point(96, 133);
+            this.nupVariable.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.alpha.Name = "alpha";
-            this.alpha.Size = new System.Drawing.Size(59, 20);
-            this.alpha.TabIndex = 5;
-            this.alpha.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.alpha.Value = new decimal(new int[] {
+            this.nupVariable.Name = "nupVariable";
+            this.nupVariable.Size = new System.Drawing.Size(59, 20);
+            this.nupVariable.TabIndex = 5;
+            this.nupVariable.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nupVariable.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.alpha.ValueChanged += new System.EventHandler(this.AlphaUDRefresh);
+            this.nupVariable.ValueChanged += new System.EventHandler(this.AlphaUDRefresh);
             // 
-            // tetaUD
+            // nupTeta
             // 
-            this.tetaUD.DecimalPlaces = 2;
-            this.tetaUD.Increment = new decimal(new int[] {
+            this.nupTeta.DecimalPlaces = 2;
+            this.nupTeta.Increment = new decimal(new int[] {
             1,
             0,
             0,
             131072});
-            this.tetaUD.Location = new System.Drawing.Point(96, 98);
-            this.tetaUD.Name = "tetaUD";
-            this.tetaUD.Size = new System.Drawing.Size(59, 20);
-            this.tetaUD.TabIndex = 4;
-            this.tetaUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tetaUD.ValueChanged += new System.EventHandler(this.TetaUDRefresh);
+            this.nupTeta.Location = new System.Drawing.Point(96, 98);
+            this.nupTeta.Name = "nupTeta";
+            this.nupTeta.Size = new System.Drawing.Size(59, 20);
+            this.nupTeta.TabIndex = 4;
+            this.nupTeta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nupTeta.ValueChanged += new System.EventHandler(this.TetaUDRefresh);
             // 
-            // activareDD
+            // dropDownActivare
             // 
-            this.activareDD.FormattingEnabled = true;
-            this.activareDD.Items.AddRange(new object[] {
+            this.dropDownActivare.FormattingEnabled = true;
+            this.dropDownActivare.Items.AddRange(new object[] {
             "Liniara",
             "Semn",
             "Sigmoidala",
             "Tangenta Hiperbolica",
             "Treapta"});
-            this.activareDD.Location = new System.Drawing.Point(26, 64);
-            this.activareDD.Name = "activareDD";
-            this.activareDD.Size = new System.Drawing.Size(129, 21);
-            this.activareDD.TabIndex = 3;
-            this.activareDD.Text = "Liniara";
-            this.activareDD.SelectedIndexChanged += new System.EventHandler(this.FunctiaActivareDDRefresh);
+            this.dropDownActivare.Location = new System.Drawing.Point(26, 64);
+            this.dropDownActivare.Name = "dropDownActivare";
+            this.dropDownActivare.Size = new System.Drawing.Size(129, 21);
+            this.dropDownActivare.TabIndex = 3;
+            this.dropDownActivare.Text = "Liniara";
+            this.dropDownActivare.SelectedIndexChanged += new System.EventHandler(this.FunctiaActivareDDRefresh);
             // 
-            // activareTb
+            // textBoxActivare
             // 
-            this.activareTb.Location = new System.Drawing.Point(26, 29);
-            this.activareTb.Name = "activareTb";
-            this.activareTb.Size = new System.Drawing.Size(129, 20);
-            this.activareTb.TabIndex = 2;
-            this.activareTb.Text = "-0.02000000";
-            this.activareTb.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxActivare.Location = new System.Drawing.Point(26, 29);
+            this.textBoxActivare.Name = "textBoxActivare";
+            this.textBoxActivare.Size = new System.Drawing.Size(129, 20);
+            this.textBoxActivare.TabIndex = 2;
+            this.textBoxActivare.Text = "-0.02000000";
+            this.textBoxActivare.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.binarCk);
-            this.groupBox4.Controls.Add(this.functieIesireTb);
-            this.groupBox4.Location = new System.Drawing.Point(577, 28);
+            this.groupBox4.Controls.Add(this.textBoxIesire);
+            this.groupBox4.Location = new System.Drawing.Point(577, 71);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(146, 75);
             this.groupBox4.TabIndex = 5;
@@ -235,14 +235,14 @@ namespace Proiect1
             this.binarCk.UseVisualStyleBackColor = true;
             this.binarCk.CheckedChanged += new System.EventHandler(this.BinarCkRefresh);
             // 
-            // functieIesireTb
+            // textBoxIesire
             // 
-            this.functieIesireTb.Location = new System.Drawing.Point(20, 19);
-            this.functieIesireTb.Name = "functieIesireTb";
-            this.functieIesireTb.Size = new System.Drawing.Size(108, 20);
-            this.functieIesireTb.TabIndex = 0;
-            this.functieIesireTb.Text = "-0.02000000";
-            this.functieIesireTb.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxIesire.Location = new System.Drawing.Point(20, 19);
+            this.textBoxIesire.Name = "textBoxIesire";
+            this.textBoxIesire.Size = new System.Drawing.Size(108, 20);
+            this.textBoxIesire.TabIndex = 0;
+            this.textBoxIesire.Text = "-0.02000000";
+            this.textBoxIesire.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // groupBox5
             // 
@@ -253,6 +253,7 @@ namespace Proiect1
             this.groupBox5.TabIndex = 5;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Iesirea";
+            this.groupBox5.Visible = false;
             // 
             // iesireTb
             // 
@@ -275,19 +276,19 @@ namespace Proiect1
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(15, 19);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.Legend = "Legend1";
-            series2.Name = "Intrare";
-            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            this.chart1.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Legend = "Legend1";
+            series1.Name = "Intrare";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(533, 199);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -336,8 +337,8 @@ namespace Proiect1
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.alpha)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tetaUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupVariable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupTeta)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -357,17 +358,17 @@ namespace Proiect1
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.ComboBox intrareDD;
-        private System.Windows.Forms.TextBox intrareTb;
-        private System.Windows.Forms.NumericUpDown alpha;
-        private System.Windows.Forms.NumericUpDown tetaUD;
-        private System.Windows.Forms.ComboBox activareDD;
-        private System.Windows.Forms.TextBox activareTb;
+        private System.Windows.Forms.ComboBox dropDownIntrare;
+        private System.Windows.Forms.TextBox textBoxIntrare;
+        private System.Windows.Forms.NumericUpDown nupVariable;
+        private System.Windows.Forms.NumericUpDown nupTeta;
+        private System.Windows.Forms.ComboBox dropDownActivare;
+        private System.Windows.Forms.TextBox textBoxActivare;
         private System.Windows.Forms.CheckBox binarCk;
-        private System.Windows.Forms.TextBox functieIesireTb;
+        private System.Windows.Forms.TextBox textBoxIesire;
         private System.Windows.Forms.TextBox iesireTb;
-        private System.Windows.Forms.Label variableLabel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelVariable;
+        private System.Windows.Forms.Label labelTeta;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.NumericUpDown nupDendrite;

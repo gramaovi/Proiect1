@@ -13,6 +13,7 @@ namespace Proiect1
 {
     public partial class Form1 : Form
     {
+        private const double e = Math.E;
         int nrintrari;
         List<Intrari> intrariList=new List<Intrari>();
         List<decimal> produsIntrariList = new List<decimal>();
@@ -26,7 +27,7 @@ namespace Proiect1
 
             flowLayoutPanel1.AutoScroll = true;
             updateIntrari();
-            
+            refreshUI();
 
 
         }
@@ -136,13 +137,13 @@ namespace Proiect1
             
             //Refresh functie intrare
             
-            switch (intrareDD.SelectedItem.ToString())
+            switch (dropDownIntrare.SelectedItem.ToString())
             {
 
-                case "Maxim": intrareTb.Text= produsIntrariList.Max<decimal>().ToString();
+                case "Maxim": textBoxIntrare.Text= produsIntrariList.Max<decimal>().ToString();
                     break;
 
-                case "Minim": intrareTb.Text = produsIntrariList.Min<decimal>().ToString();
+                case "Minim": textBoxIntrare.Text = produsIntrariList.Min<decimal>().ToString();
                     break;
 
                 case "Produs":
@@ -152,7 +153,7 @@ namespace Proiect1
                         {
                             produs *= intrare;
                         }
-                        intrareTb.Text = produs.ToString();
+                        textBoxIntrare.Text = produs.ToString();
                     }
                     break;
                 case "Suma":
@@ -162,73 +163,73 @@ namespace Proiect1
                         {
                             suma += intrare;
                         }
-                        intrareTb.Text = suma.ToString();
+                        textBoxIntrare.Text = suma.ToString();
                     }
                     break;
             }
             //---Refresh functie intrare
 
             //---Refresh functie activare
-            switch (activareDD.SelectedItem.ToString())
+            switch (dropDownActivare.SelectedItem.ToString())
             {
                 case "Liniara":
                     {
-                        variableLabel.Visible = true;
-                        alpha.Visible = true;
-                        variableLabel.Text = "α";
+                        labelVariable.Visible = true;
+                        nupVariable.Visible = true;
+                        labelVariable.Text = "α";
                         
-                        tetaUD.Minimum = -1;
-                        tetaUD.Maximum = 1;
-                        if (Convert.ToDecimal(intrareTb.Text) > alpha.Value)
+                        nupTeta.Minimum = -1;
+                        nupTeta.Maximum = 1;
+                        if (Convert.ToDecimal(textBoxIntrare.Text) > nupVariable.Value)
                         {
-                            activareTb.Text = 1.ToString();
+                            textBoxActivare.Text = 1.ToString();
                         }
                         else
-                            if (Convert.ToDecimal(intrareTb.Text) >= -alpha.Value && Convert.ToDecimal(intrareTb.Text) <= alpha.Value)
+                            if (Convert.ToDecimal(textBoxIntrare.Text) >= -nupVariable.Value && Convert.ToDecimal(textBoxIntrare.Text) <= nupVariable.Value)
                             {
-                            activareTb.Text = ((Convert.ToDecimal(intrareTb.Text) - tetaUD.Value) / alpha.Value).ToString();
+                            textBoxActivare.Text = ((Convert.ToDecimal(textBoxIntrare.Text) - nupTeta.Value) / nupVariable.Value).ToString();
                             }
                         else
-                            if(Convert.ToDecimal(intrareTb.Text)<-alpha.Value)
+                            if(Convert.ToDecimal(textBoxIntrare.Text)<-nupVariable.Value)
                         {
-                            activareTb.Text = "-1";
+                            textBoxActivare.Text = "-1";
                         }
                     } 
                     break;
 
                 case "Sigmoidala":
                     {
-                        variableLabel.Visible = true;
-                        alpha.Visible = true;
-                        variableLabel.Text = "g";
-                        activareTb.Text = (1.0 / (1.0 + Math.Pow(Math.E, (double)-alpha.Value*(Convert.ToDouble(intrareTb.Text) - Convert.ToDouble(tetaUD.Value))))).ToString();
+                        labelVariable.Visible = true;
+                        nupVariable.Visible = true;
+                        labelVariable.Text = "g";
+                        textBoxActivare.Text = (1.0 / (1.0 + Math.Pow(Math.E, (double)-nupVariable.Value*(Convert.ToDouble(textBoxIntrare.Text) - Convert.ToDouble(nupTeta.Value))))).ToString();
                         break;
                     }
 
                 case "Treapta":
                     {
-                        variableLabel.Visible = false;
-                        alpha.Visible = false ;
-                        if (Convert.ToDouble(intrareTb.Text) >= Convert.ToDouble(tetaUD.Value)) activareTb.Text = 1.ToString();
-                        if (Convert.ToDouble(intrareTb.Text) < Convert.ToDouble(tetaUD.Value)) activareTb.Text = 0.ToString();
+                        labelVariable.Visible = false;
+                        nupVariable.Visible = false ;
+                        if (Convert.ToDouble(textBoxIntrare.Text) >= Convert.ToDouble(nupTeta.Value)) textBoxActivare.Text = 1.ToString();
+                        if (Convert.ToDouble(textBoxIntrare.Text) < Convert.ToDouble(nupTeta.Value)) textBoxActivare.Text = 0.ToString();
                     }
                     break;
 
                 case "Semn":
                     {
-                        variableLabel.Visible = false;
-                        alpha.Visible = false;
-                        if (Convert.ToDouble(intrareTb.Text) >= Convert.ToDouble(tetaUD.Value)) activareTb.Text = 1.ToString();
-                        if (Convert.ToDouble(intrareTb.Text) < Convert.ToDouble(tetaUD.Value)) activareTb.Text = "-1";
+                        labelVariable.Visible = false;
+                        nupVariable.Visible = false;
+                        if (Convert.ToDouble(textBoxIntrare.Text) >= Convert.ToDouble(nupTeta.Value)) textBoxActivare.Text = 1.ToString();
+                        if (Convert.ToDouble(textBoxIntrare.Text) < Convert.ToDouble(nupTeta.Value)) textBoxActivare.Text = "-1";
                     }
                     break;
 
                 case "Tangenta Hiperbolica":
                     {
-                        variableLabel.Visible = true;
-                        alpha.Visible = true;
-                        variableLabel.Text = "g";
-                        activareTb.Text = ((Math.Pow(Math.E, (double)alpha.Value) * (Convert.ToDouble(intrareTb.Text) - Convert.ToDouble(tetaUD.Value)) - Math.Pow(Math.E, (double)-alpha.Value) * (Convert.ToDouble(intrareTb.Text) - Convert.ToDouble(tetaUD.Value))) / (Math.Pow(Math.E, (double)alpha.Value) * (Convert.ToDouble(intrareTb.Text) - Convert.ToDouble(tetaUD.Value)) + Math.Pow(Math.E, (double)-alpha.Value) * (Convert.ToDouble(intrareTb.Text) - Convert.ToDouble(tetaUD.Value)))).ToString();
+                        labelVariable.Visible = true;
+                        nupVariable.Visible = true;
+                        labelVariable.Text = "g";
+                        textBoxActivare.Text = ((Math.Pow(e, (double)nupVariable.Value) * (Convert.ToDouble(textBoxIntrare.Text) - Convert.ToDouble(nupTeta.Value)) - Math.Pow(Math.E, (double)-nupVariable.Value) * (Convert.ToDouble(textBoxIntrare.Text) - Convert.ToDouble(nupTeta.Value))) / (Math.Pow(Math.E, (double)nupVariable.Value) * (Convert.ToDouble(textBoxIntrare.Text) - Convert.ToDouble(nupTeta.Value)) + Math.Pow(Math.E, (double)-nupVariable.Value) * (Convert.ToDouble(textBoxIntrare.Text) - Convert.ToDouble(nupTeta.Value)))).ToString();
                         break;
                     }
             }
@@ -237,25 +238,25 @@ namespace Proiect1
             //---Refresh functie iesire/iesire
             if(binarCk.Checked==true)
             {
-                if (Convert.ToDouble(activareTb.Text) < 0)
+                if (Convert.ToDouble(textBoxActivare.Text) < 0)
                 {
-                    functieIesireTb.Text = "-1";
+                    textBoxIesire.Text = "-1";
                     iesireTb.Text = "-1";
                 }
                     
                 else
 
-                if (Convert.ToDouble(activareTb.Text) >= 0)
+                if (Convert.ToDouble(textBoxActivare.Text) >= 0)
                 {
                     iesireTb.Text = 1.ToString();
-                    functieIesireTb.Text = 1.ToString();
+                    textBoxIesire.Text = 1.ToString();
                 }
                     
             }
             else
             {
-                iesireTb.Text = activareTb.Text;
-                functieIesireTb.Text = activareTb.Text;
+                iesireTb.Text = textBoxActivare.Text;
+                textBoxIesire.Text = textBoxActivare.Text;
             }
             //---Refresh functie iesire/iesire
 
@@ -263,7 +264,7 @@ namespace Proiect1
             chart1.Series["Intrare"].Points.Clear();
             this.chart1.Series["Intrare"].Points.AddXY(-5 , -1);
            // this.chart1.Series["Intrare"].Points.AddXY()
-            this.chart1.Series["Intrare"].Points.AddXY(intrareTb.Text, activareTb.Text);
+            this.chart1.Series["Intrare"].Points.AddXY(textBoxIntrare.Text, textBoxActivare.Text);
             this.chart1.Series["Intrare"].Points.AddXY(6, 1);
             // --Refresh chart
         }
