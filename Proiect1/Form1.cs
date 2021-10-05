@@ -45,12 +45,16 @@ namespace Proiect1
                     numericUpDown.Increment = Convert.ToDecimal(0.01);
                     numericUpDown.DecimalPlaces = 2;
                     numericUpDown.Size = new Size(50, 20);
+                    numericUpDown.Minimum = (decimal)-1.00;
+                    numericUpDown.Maximum = (decimal)1.00;
                     numericUpDown.ValueChanged += new EventHandler(refreshValues);
 
                     NumericUpDown numericUpDown2 = new NumericUpDown();
                     numericUpDown2.Text = "0.00";
                     numericUpDown2.Tag = "w";
                     numericUpDown2.Size = new Size(50, 20);
+                    numericUpDown2.Minimum = (decimal)-1.00;
+                    numericUpDown2.Maximum = (decimal)1.00;
                     numericUpDown2.Increment = Convert.ToDecimal(0.01);
                     numericUpDown2.DecimalPlaces = 2;
                     numericUpDown2.ValueChanged += new EventHandler(refreshValues);
@@ -197,7 +201,7 @@ namespace Proiect1
                         variableLabel.Visible = true;
                         alpha.Visible = true;
                         variableLabel.Text = "g";
-                        activareTb.Text = (1 / (1 + Math.Pow(Math.E, (double)-alpha.Value)*(Convert.ToDouble(intrareTb.Text) - Convert.ToDouble(tetaUD.Value)))).ToString();
+                        activareTb.Text = (1.0 / (1.0 + Math.Pow(Math.E, (double)-alpha.Value*(Convert.ToDouble(intrareTb.Text) - Convert.ToDouble(tetaUD.Value))))).ToString();
                         break;
                     }
 
@@ -257,7 +261,8 @@ namespace Proiect1
 
             // Refresh chart
             chart1.Series["Intrare"].Points.Clear();
-            this.chart1.Series["Intrare"].Points.AddXY(-4 , -1);
+            this.chart1.Series["Intrare"].Points.AddXY(-5 , -1);
+           // this.chart1.Series["Intrare"].Points.AddXY()
             this.chart1.Series["Intrare"].Points.AddXY(intrareTb.Text, activareTb.Text);
             this.chart1.Series["Intrare"].Points.AddXY(6, 1);
             // --Refresh chart
