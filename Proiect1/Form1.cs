@@ -229,7 +229,8 @@ namespace Proiect1
                         labelVariable.Visible = true;
                         nupVariable.Visible = true;
                         labelVariable.Text = "g";
-                        textBoxActivare.Text = ((Math.Pow(e, (double)nupVariable.Value) * (Convert.ToDouble(textBoxIntrare.Text) - Convert.ToDouble(nupTeta.Value)) - Math.Pow(Math.E, (double)-nupVariable.Value) * (Convert.ToDouble(textBoxIntrare.Text) - Convert.ToDouble(nupTeta.Value))) / (Math.Pow(Math.E, (double)nupVariable.Value) * (Convert.ToDouble(textBoxIntrare.Text) - Convert.ToDouble(nupTeta.Value)) + Math.Pow(Math.E, (double)-nupVariable.Value) * (Convert.ToDouble(textBoxIntrare.Text) - Convert.ToDouble(nupTeta.Value)))).ToString();
+                        textBoxActivare.Text = (
+                            (Math.Pow(e, (double)nupVariable.Value * (Convert.ToDouble(textBoxIntrare.Text) - Convert.ToDouble(nupTeta.Value))) - Math.Pow(e, (double)-nupVariable.Value * (Convert.ToDouble(textBoxIntrare.Text) - Convert.ToDouble(nupTeta.Value)))) / (Math.Pow(e, (double)nupVariable.Value * (Convert.ToDouble(textBoxIntrare.Text) - Convert.ToDouble(nupTeta.Value))) + Math.Pow(e, (double)-nupVariable.Value * (Convert.ToDouble(textBoxIntrare.Text) - Convert.ToDouble(nupTeta.Value))))).ToString();
                         break;
                     }
             }
@@ -241,21 +242,21 @@ namespace Proiect1
                 if (Convert.ToDouble(textBoxActivare.Text) < 0)
                 {
                     textBoxIesire.Text = "-1";
-                    iesireTb.Text = "-1";
+                   
                 }
                     
                 else
 
                 if (Convert.ToDouble(textBoxActivare.Text) >= 0)
                 {
-                    iesireTb.Text = 1.ToString();
+                  
                     textBoxIesire.Text = 1.ToString();
                 }
                     
             }
             else
             {
-                iesireTb.Text = textBoxActivare.Text;
+               
                 textBoxIesire.Text = textBoxActivare.Text;
             }
             //---Refresh functie iesire/iesire
