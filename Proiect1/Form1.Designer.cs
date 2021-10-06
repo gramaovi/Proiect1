@@ -29,9 +29,9 @@ namespace Proiect1
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea18 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend18 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -67,23 +67,23 @@ namespace Proiect1
             this.groupBox1.Controls.Add(this.flowLayoutPanel1);
             this.groupBox1.Location = new System.Drawing.Point(23, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(128, 410);
+            this.groupBox1.Size = new System.Drawing.Size(247, 410);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Nr de intrari :";
+            this.groupBox1.Text = "Nr de intrari - dendrite:";
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 23);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(116, 381);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(235, 381);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dropDownIntrare);
             this.groupBox2.Controls.Add(this.textBoxIntrare);
-            this.groupBox2.Location = new System.Drawing.Point(157, 28);
+            this.groupBox2.Location = new System.Drawing.Point(276, 61);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(160, 85);
             this.groupBox2.TabIndex = 3;
@@ -122,7 +122,7 @@ namespace Proiect1
             this.groupBox3.Controls.Add(this.nupTeta);
             this.groupBox3.Controls.Add(this.dropDownActivare);
             this.groupBox3.Controls.Add(this.textBoxActivare);
-            this.groupBox3.Location = new System.Drawing.Point(334, 28);
+            this.groupBox3.Location = new System.Drawing.Point(459, 28);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(184, 169);
             this.groupBox3.TabIndex = 4;
@@ -153,6 +153,12 @@ namespace Proiect1
             // 
             // nupVariable
             // 
+            this.nupVariable.DecimalPlaces = 2;
+            this.nupVariable.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
             this.nupVariable.Location = new System.Drawing.Point(96, 133);
             this.nupVariable.Minimum = new decimal(new int[] {
             1,
@@ -214,7 +220,7 @@ namespace Proiect1
             // 
             this.groupBox4.Controls.Add(this.binarCk);
             this.groupBox4.Controls.Add(this.textBoxIesire);
-            this.groupBox4.Location = new System.Drawing.Point(577, 71);
+            this.groupBox4.Location = new System.Drawing.Point(666, 71);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(146, 75);
             this.groupBox4.TabIndex = 5;
@@ -244,35 +250,35 @@ namespace Proiect1
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.chart1);
-            this.groupBox6.Location = new System.Drawing.Point(157, 203);
+            this.groupBox6.Location = new System.Drawing.Point(294, 203);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(566, 235);
+            this.groupBox6.Size = new System.Drawing.Size(509, 235);
             this.groupBox6.TabIndex = 6;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "groupBox6";
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea18.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea18);
+            legend18.Name = "Legend1";
+            this.chart1.Legends.Add(legend18);
             this.chart1.Location = new System.Drawing.Point(15, 19);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.Legend = "Legend1";
-            series2.Name = "Intrare";
-            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(533, 199);
+            series18.ChartArea = "ChartArea1";
+            series18.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series18.Legend = "Legend1";
+            series18.Name = "Intrare";
+            series18.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series18.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            this.chart1.Series.Add(series18);
+            this.chart1.Size = new System.Drawing.Size(476, 199);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
             // nupDendrite
             // 
-            this.nupDendrite.Location = new System.Drawing.Point(95, 25);
+            this.nupDendrite.Location = new System.Drawing.Point(137, 24);
             this.nupDendrite.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -298,7 +304,7 @@ namespace Proiect1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 464);
+            this.ClientSize = new System.Drawing.Size(824, 464);
             this.Controls.Add(this.nupDendrite);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox4);

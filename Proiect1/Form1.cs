@@ -34,18 +34,40 @@ namespace Proiect1
         private void updateIntrari()
         {
             nrintrari = Convert.ToInt32(nupDendrite.Value);
-            if (nrintrari > flowLayoutPanel1.Controls.Count / 3)
-                for (int i = flowLayoutPanel1.Controls.Count / 3; i < nrintrari; i++)
+            if (nrintrari > flowLayoutPanel1.Controls.Count / 6)
+                for (int i = flowLayoutPanel1.Controls.Count / 6; i < nrintrari; i++)
                 {
-                    Label label = new Label();
-                    label.Text = "   X["+i.ToString()+"]" + "            W[" + i.ToString()+"]";
+                    Size sizei = new Size(25, 25);
+                    Size sizexw = new Size(15, 23);
+                    Label labelx = new Label();
+                    labelx.Text = "X";
+                    labelx.Font = new Font("Microsoft sans serif", 8, FontStyle.Regular);
+                    Label labelix = new Label();
+                    labelix.Text =i.ToString();
+                    labelix.Font= new Font("Microsoft sans serif", 7, FontStyle.Regular);
+                    Label labelw = new Label();
+                    labelw.Text = "W";
+              
+                    labelw.Font = new Font("Microsoft sans serif", 8, FontStyle.Regular);
+                    Label labeliw = new Label();
+                    labeliw.Text = i.ToString();
+                    labeliw.Font = new Font("Microsoft sans serif", 7, FontStyle.Regular);
+
+                    labelx.Size = sizexw;
+                    labelix.Size = sizei;
+                    labelw.Size = sizexw;
+                    labeliw.Size = sizei;
+                    labelx.TextAlign = ContentAlignment.MiddleLeft;
+                    labelix.TextAlign = ContentAlignment.BottomLeft;
+                    labelw.TextAlign = ContentAlignment.MiddleLeft;
+                    labeliw.TextAlign = ContentAlignment.BottomLeft;
 
                     NumericUpDown numericUpDown = new NumericUpDown();
                     numericUpDown.Text = "0.00";
                     numericUpDown.Tag = "in";
                     numericUpDown.Increment = Convert.ToDecimal(0.01);
                     numericUpDown.DecimalPlaces = 2;
-                    numericUpDown.Size = new Size(50, 20);
+                    numericUpDown.Size = new Size(55, 20);
                     numericUpDown.Minimum = (decimal)-1.00;
                     numericUpDown.Maximum = (decimal)1.00;
                     numericUpDown.ValueChanged += new EventHandler(refreshValues);
@@ -53,21 +75,27 @@ namespace Proiect1
                     NumericUpDown numericUpDown2 = new NumericUpDown();
                     numericUpDown2.Text = "0.00";
                     numericUpDown2.Tag = "w";
-                    numericUpDown2.Size = new Size(50, 20);
+                    numericUpDown2.Size = new Size(55, 20);
                     numericUpDown2.Minimum = (decimal)-1.00;
                     numericUpDown2.Maximum = (decimal)1.00;
                     numericUpDown2.Increment = Convert.ToDecimal(0.01);
                     numericUpDown2.DecimalPlaces = 2;
                     numericUpDown2.ValueChanged += new EventHandler(refreshValues);
-                    flowLayoutPanel1.Controls.Add(label);
+
+                    flowLayoutPanel1.Controls.Add(labelx);
+                    flowLayoutPanel1.Controls.Add(labelix);
 
                     flowLayoutPanel1.Controls.Add(numericUpDown);
+
+                    flowLayoutPanel1.Controls.Add(labelw);
+                    flowLayoutPanel1.Controls.Add(labeliw);
+
                     flowLayoutPanel1.Controls.Add(numericUpDown2);
                 }
             else
-                   if (nrintrari < flowLayoutPanel1.Controls.Count / 3 && flowLayoutPanel1.Controls.Count % 3 == 0)
+                   if (nrintrari < flowLayoutPanel1.Controls.Count / 6 && flowLayoutPanel1.Controls.Count % 6 == 0)
             {
-                for (int i = flowLayoutPanel1.Controls.Count - 1; i >= nrintrari * 3; i--)
+                for (int i = flowLayoutPanel1.Controls.Count - 1; i >= nrintrari * 6; i--)
                 {
                     flowLayoutPanel1.Controls.RemoveAt(i);
                 }
