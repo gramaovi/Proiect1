@@ -174,6 +174,7 @@ namespace Proiect1
             {
                 case "Liniara":
                     {
+                        binarCk.Visible = true;
                         labelVariable.Visible = true;
                         nupVariable.Visible = true;
                         labelVariable.Text = "α";
@@ -199,6 +200,7 @@ namespace Proiect1
 
                 case "Sigmoidala":
                     {
+                        binarCk.Visible = true;
                         labelVariable.Visible = true;
                         nupVariable.Visible = true;
                         labelVariable.Text = "g";
@@ -208,6 +210,7 @@ namespace Proiect1
 
                 case "Treapta":
                     {
+                        binarCk.Visible = false;
                         labelVariable.Visible = false;
                         nupVariable.Visible = false ;
                         if (Convert.ToDouble(textBoxIntrare.Text) >= Convert.ToDouble(nupTeta.Value)) textBoxActivare.Text = 1.ToString();
@@ -217,6 +220,7 @@ namespace Proiect1
 
                 case "Semn":
                     {
+                        binarCk.Visible = true;
                         labelVariable.Visible = false;
                         nupVariable.Visible = false;
                         if (Convert.ToDouble(textBoxIntrare.Text) >= Convert.ToDouble(nupTeta.Value)) textBoxActivare.Text = 1.ToString();
@@ -226,6 +230,7 @@ namespace Proiect1
 
                 case "Tangenta Hiperbolica":
                     {
+                        binarCk.Visible = true;
                         labelVariable.Visible = true;
                         nupVariable.Visible = true;
                         labelVariable.Text = "g";
@@ -239,24 +244,49 @@ namespace Proiect1
             //---Refresh functie iesire/iesire
             if(binarCk.Checked==true)
             {
-                if (Convert.ToDouble(textBoxActivare.Text) < 0)
+                if(dropDownActivare.SelectedItem.ToString().Equals("Treapta"))
                 {
-                    textBoxIesire.Text = "-1";
-                   
+                    if (Convert.ToDouble(textBoxActivare.Text) > 0)
+                        textBoxIesire.Text = 1.ToString();
+                    else
+                        textBoxIesire.Text = 0.ToString();
                 }
-                    
+                if (dropDownActivare.SelectedItem.ToString().Equals("Liniara"))
+                {
+                    if (Convert.ToDouble(textBoxActivare.Text) > 0)
+                        textBoxIesire.Text = 1.ToString();
+                    else
+                        textBoxIesire.Text = 0.ToString();
+                }
                 else
-
-                if (Convert.ToDouble(textBoxActivare.Text) >= 0)
+                    if(dropDownActivare.SelectedItem.ToString().Equals("Semn"))
                 {
-                  
-                    textBoxIesire.Text = 1.ToString();
+                    if(Convert.ToDouble(textBoxActivare.Text) >= 0)
+                        textBoxIesire.Text = 1.ToString();
+                    else
+                        textBoxIesire.Text = 0.ToString();
                 }
-                    
+                else
+                     if (dropDownActivare.SelectedItem.ToString().Equals("Sigmoidala"))
+                {
+                    if (Convert.ToDouble(textBoxActivare.Text) >= 0.5)
+                        textBoxIesire.Text = 1.ToString();
+                    else
+                        textBoxIesire.Text = 0.ToString();
+                }
+                else
+                if (dropDownActivare.SelectedItem.ToString().Equals("Tangenta Hiperbolica"))
+                {
+                    if (Convert.ToDouble(textBoxActivare.Text) >= 0)
+                        textBoxIesire.Text = 1.ToString();
+                    else
+                        textBoxIesire.Text = 0.ToString();
+                }
+
+
             }
             else
-            {
-               
+            {  
                 textBoxIesire.Text = textBoxActivare.Text;
             }
             //---Refresh functie iesire/iesire
