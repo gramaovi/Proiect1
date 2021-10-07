@@ -203,6 +203,7 @@ namespace Proiect1
             {
                 case "Liniara":
                     {
+                        grafic.Visible = false;
                         binarCk.Visible = true;
                         labelVariable.Visible = true;
                         nupVariable.Visible = true;
@@ -230,6 +231,7 @@ namespace Proiect1
 
                 case "Sigmoidala":
                     {
+                        grafic.Visible = false;
                         binarCk.Visible = true;
                         labelVariable.Visible = true;
                         nupVariable.Visible = true;
@@ -240,6 +242,7 @@ namespace Proiect1
 
                 case "Treapta":
                     {
+                        grafic.Visible = true;
                         binarCk.Visible = false;
                         labelVariable.Visible = false;
                         nupVariable.Visible = false ;
@@ -269,11 +272,13 @@ namespace Proiect1
                             
                             this.chart1.Series["Marker"].Points.AddXY(0.00000001, 1);
                             textBoxActivare.Text = 1.ToString();
+                            textBoxIesire.Text = 1.ToString();
                         }
                         if (Convert.ToDouble(textBoxIntrare.Text) < Convert.ToDouble(nupTeta.Value))
                         {
                             this.chart1.Series["Marker"].Points.AddXY(0.00000001, 0);
                             textBoxActivare.Text = 0.ToString(); ;
+                            textBoxIesire.Text = 0.ToString();
                         }
 
 
@@ -285,10 +290,11 @@ namespace Proiect1
 
                 case "Semn":
                     {
-                        binarCk.Visible = true;
+                        grafic.Visible = true;
+                        binarCk.Visible = false;
                         labelVariable.Visible = false;
                         nupVariable.Visible = false;
-                       
+                      
 
                         // Refresh chart
                         chart1.Series["Intrare"].Points.Clear();
@@ -313,11 +319,14 @@ namespace Proiect1
                         {
                             this.chart1.Series["Marker"].Points.AddXY(0.00000001, 1);
                             textBoxActivare.Text = 1.ToString();
+                            textBoxIesire.Text = 1.ToString();
+
                         }
                         if (Convert.ToDouble(textBoxIntrare.Text) < Convert.ToDouble(nupTeta.Value))
                         {
                             this.chart1.Series["Marker"].Points.AddXY(0.00000001, -1);
                             textBoxActivare.Text = "-1";
+                            textBoxIesire.Text = "-1";
                         }
                         
 
@@ -329,6 +338,7 @@ namespace Proiect1
 
                 case "Tangenta Hiperbolica":
                     {
+                        grafic.Visible = false;
                         binarCk.Visible = true;
                         labelVariable.Visible = true;
                         nupVariable.Visible = true;
@@ -343,28 +353,14 @@ namespace Proiect1
             //---Refresh functie iesire/iesire
             if(binarCk.Checked==true)
             {
-                if(dropDownActivare.SelectedItem.ToString().Equals("Treapta"))
-                {
-                    if (Convert.ToDouble(textBoxActivare.Text) > 0)
-                        textBoxIesire.Text = 1.ToString();
-                    else
-                        textBoxIesire.Text = 0.ToString();
-                }
+     
                 if (dropDownActivare.SelectedItem.ToString().Equals("Liniara"))
                 {
 
-                    if (Convert.ToDouble(textBoxActivare.Text) > 0)
+                    if (Convert.ToDouble(textBoxActivare.Text) >= 0)
                         textBoxIesire.Text = 1.ToString();
                     else
-                        textBoxIesire.Text = 0.ToString();
-                }
-                else
-                    if(dropDownActivare.SelectedItem.ToString().Equals("Semn"))
-                {
-                    if(Convert.ToDouble(textBoxActivare.Text) >= 0)
-                        textBoxIesire.Text = 1.ToString();
-                    else
-                        textBoxIesire.Text = 0.ToString();
+                        textBoxIesire.Text = "-1";
                 }
                 else
                      if (dropDownActivare.SelectedItem.ToString().Equals("Sigmoidala"))
@@ -380,7 +376,7 @@ namespace Proiect1
                     if (Convert.ToDouble(textBoxActivare.Text) >= 0)
                         textBoxIesire.Text = 1.ToString();
                     else
-                        textBoxIesire.Text = 0.ToString();
+                        textBoxIesire.Text = "-1";
                 }
 
 

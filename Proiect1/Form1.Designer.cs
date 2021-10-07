@@ -49,7 +49,7 @@ namespace Proiect1
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.binarCk = new System.Windows.Forms.CheckBox();
             this.textBoxIesire = new System.Windows.Forms.TextBox();
-            this.Grafic = new System.Windows.Forms.GroupBox();
+            this.grafic = new System.Windows.Forms.GroupBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.nupDendrite = new System.Windows.Forms.NumericUpDown();
@@ -59,7 +59,7 @@ namespace Proiect1
             ((System.ComponentModel.ISupportInitialize)(this.nupVariable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupTeta)).BeginInit();
             this.groupBox4.SuspendLayout();
-            this.Grafic.SuspendLayout();
+            this.grafic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupDendrite)).BeginInit();
             this.SuspendLayout();
@@ -255,16 +255,16 @@ namespace Proiect1
             this.textBoxIesire.Text = "-0.00000000";
             this.textBoxIesire.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // Grafic
+            // grafic
             // 
-            this.Grafic.BackColor = System.Drawing.Color.Transparent;
-            this.Grafic.Controls.Add(this.chart1);
-            this.Grafic.Location = new System.Drawing.Point(276, 203);
-            this.Grafic.Name = "Grafic";
-            this.Grafic.Size = new System.Drawing.Size(527, 235);
-            this.Grafic.TabIndex = 6;
-            this.Grafic.TabStop = false;
-            this.Grafic.Text = "Grafic";
+            this.grafic.BackColor = System.Drawing.Color.Transparent;
+            this.grafic.Controls.Add(this.chart1);
+            this.grafic.Location = new System.Drawing.Point(276, 203);
+            this.grafic.Name = "grafic";
+            this.grafic.Size = new System.Drawing.Size(527, 235);
+            this.grafic.TabIndex = 6;
+            this.grafic.TabStop = false;
+            this.grafic.Text = "Grafic";
             // 
             // chart1
             // 
@@ -331,7 +331,7 @@ namespace Proiect1
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(824, 464);
             this.Controls.Add(this.nupDendrite);
-            this.Controls.Add(this.Grafic);
+            this.Controls.Add(this.grafic);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -348,7 +348,7 @@ namespace Proiect1
             ((System.ComponentModel.ISupportInitialize)(this.nupTeta)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.Grafic.ResumeLayout(false);
+            this.grafic.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupDendrite)).EndInit();
             this.ResumeLayout(false);
@@ -361,7 +361,7 @@ namespace Proiect1
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.GroupBox Grafic;
+        private System.Windows.Forms.GroupBox grafic;
         private System.Windows.Forms.ComboBox dropDownIntrare;
         private System.Windows.Forms.TextBox textBoxIntrare;
         private System.Windows.Forms.NumericUpDown nupVariable;
