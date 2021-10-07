@@ -128,6 +128,7 @@ namespace Proiect1
             this.groupBox3.Controls.Add(this.nupTeta);
             this.groupBox3.Controls.Add(this.dropDownActivare);
             this.groupBox3.Controls.Add(this.textBoxActivare);
+            this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox3.Location = new System.Drawing.Point(459, 28);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(184, 169);
@@ -326,7 +327,7 @@ namespace Proiect1
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.BackgroundImage = global::Proiect1.Properties.Resources.Neuron_Background_1920x1080;
+            this.BackgroundImage = global::Proiect1.Properties.Resources.WhatsApp_Image_2021_10_07_at_04_07_22;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(824, 464);
             this.Controls.Add(this.nupDendrite);

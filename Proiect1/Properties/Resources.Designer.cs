@@ -69,5 +69,75 @@ namespace Proiect1.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2021_10_07_at_03_37_02 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2021-10-07 at 03.37.02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2021_10_07_at_03_37_02__1_ {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2021-10-07 at 03.37.02 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2021_10_07_at_03_37_02__2_ {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2021-10-07 at 03.37.02 (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2021_10_07_at_04_04_51 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2021-10-07 at 04.04.51", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2021_10_07_at_04_05_54 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2021-10-07 at 04.05.54", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2021_10_07_at_04_06_32 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2021-10-07 at 04.06.32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2021_10_07_at_04_07_22 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2021-10-07 at 04.07.22", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
