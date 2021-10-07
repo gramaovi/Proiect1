@@ -28,6 +28,7 @@ namespace Proiect1
             flowLayoutPanel1.AutoScroll = true;
             updateIntrari();
             refreshUI();
+            this.chart1.Legends[0].Enabled = false;
 
 
         }
@@ -223,7 +224,8 @@ namespace Proiect1
                         {
                             textBoxActivare.Text = "-1";
                         }
-                    } 
+              
+                    }
                     break;
 
                 case "Sigmoidala":
@@ -251,8 +253,42 @@ namespace Proiect1
                         binarCk.Visible = true;
                         labelVariable.Visible = false;
                         nupVariable.Visible = false;
-                        if (Convert.ToDouble(textBoxIntrare.Text) >= Convert.ToDouble(nupTeta.Value)) textBoxActivare.Text = 1.ToString();
-                        if (Convert.ToDouble(textBoxIntrare.Text) < Convert.ToDouble(nupTeta.Value)) textBoxActivare.Text = "-1";
+                       
+
+                        // Refresh chart
+                        chart1.Series["Intrare"].Points.Clear();
+                        chart1.Series["vertical"].Points.Clear();
+                        chart1.Series["Marker"].Points.Clear();
+                        chart1.ChartAreas[0].AxisX.IsMarginVisible = false;
+                        chart1.ChartAreas[0].AxisX.Interval = 1;
+                        chart1.ChartAreas[0].AxisY.Interval = 0.5;
+                        this.chart1.Series["Intrare"].Points.AddXY(-5, -1);
+                        // this.chart1.Series["Intrare"].Points.AddXY()
+                        this.chart1.Series["Intrare"].Points.AddXY(nupTeta.Value, -1);
+                        this.chart1.Series["Intrare"].Points.AddXY(nupTeta.Value, 1);
+                        this.chart1.Series["Intrare"].Points.AddXY(5, 1);
+                        this.chart1.Series["Intrare"].Color = Color.Red;
+                        this.chart1.Series["Intrare"].BorderWidth = 3;
+                        this.chart1.Series["vertical"].Points.AddXY(0, -1.5);
+                        this.chart1.Series["vertical"].Points.AddXY(0, 1.5);
+                        this.chart1.Series["vertical"].Color = Color.Blue ;
+                        this.chart1.Series["vertical"].BorderWidth = 3;
+                        if (Convert.ToDouble(textBoxIntrare.Text) >= Convert.ToDouble(nupTeta.Value))
+                        {
+                            this.chart1.Series["Marker"].Color = Color.Yellow;
+                            this.chart1.Series["Marker"].Points.AddXY(0.00000001, 1);
+                            textBoxActivare.Text = 1.ToString();
+                        }
+                        if (Convert.ToDouble(textBoxIntrare.Text) < Convert.ToDouble(nupTeta.Value))
+                        {
+                            this.chart1.Series["Marker"].Points.AddXY(0.00000001, -1);
+                            textBoxActivare.Text = "-1";
+                        }
+                        
+
+
+
+                        // --Refresh chart
                     }
                     break;
 
@@ -281,6 +317,7 @@ namespace Proiect1
                 }
                 if (dropDownActivare.SelectedItem.ToString().Equals("Liniara"))
                 {
+
                     if (Convert.ToDouble(textBoxActivare.Text) > 0)
                         textBoxIesire.Text = 1.ToString();
                     else
@@ -319,13 +356,7 @@ namespace Proiect1
             }
             //---Refresh functie iesire/iesire
 
-            // Refresh chart
-            chart1.Series["Intrare"].Points.Clear();
-            this.chart1.Series["Intrare"].Points.AddXY(-5 , -1);
-           // this.chart1.Series["Intrare"].Points.AddXY()
-            this.chart1.Series["Intrare"].Points.AddXY(textBoxIntrare.Text, textBoxActivare.Text);
-            this.chart1.Series["Intrare"].Points.AddXY(6, 1);
-            // --Refresh chart
+         
         }
         private void refreshUI()
         {

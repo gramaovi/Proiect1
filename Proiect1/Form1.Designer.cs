@@ -29,9 +29,11 @@ namespace Proiect1
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea18 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend18 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -47,7 +49,7 @@ namespace Proiect1
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.binarCk = new System.Windows.Forms.CheckBox();
             this.textBoxIesire = new System.Windows.Forms.TextBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.Grafic = new System.Windows.Forms.GroupBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.nupDendrite = new System.Windows.Forms.NumericUpDown();
@@ -57,13 +59,14 @@ namespace Proiect1
             ((System.ComponentModel.ISupportInitialize)(this.nupVariable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupTeta)).BeginInit();
             this.groupBox4.SuspendLayout();
-            this.groupBox6.SuspendLayout();
+            this.Grafic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupDendrite)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.flowLayoutPanel1);
             this.groupBox1.Location = new System.Drawing.Point(23, 28);
             this.groupBox1.Name = "groupBox1";
@@ -74,6 +77,7 @@ namespace Proiect1
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 23);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(235, 381);
@@ -81,6 +85,7 @@ namespace Proiect1
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.dropDownIntrare);
             this.groupBox2.Controls.Add(this.textBoxIntrare);
             this.groupBox2.Location = new System.Drawing.Point(276, 61);
@@ -116,6 +121,7 @@ namespace Proiect1
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.labelVariable);
             this.groupBox3.Controls.Add(this.labelTeta);
             this.groupBox3.Controls.Add(this.nupVariable);
@@ -213,11 +219,12 @@ namespace Proiect1
             this.textBoxActivare.Name = "textBoxActivare";
             this.textBoxActivare.Size = new System.Drawing.Size(129, 20);
             this.textBoxActivare.TabIndex = 2;
-            this.textBoxActivare.Text = "-0.02000000";
+            this.textBoxActivare.Text = "-0.00000000";
             this.textBoxActivare.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // groupBox4
             // 
+            this.groupBox4.BackColor = System.Drawing.Color.Transparent;
             this.groupBox4.Controls.Add(this.binarCk);
             this.groupBox4.Controls.Add(this.textBoxIesire);
             this.groupBox4.Location = new System.Drawing.Point(666, 71);
@@ -244,37 +251,51 @@ namespace Proiect1
             this.textBoxIesire.Name = "textBoxIesire";
             this.textBoxIesire.Size = new System.Drawing.Size(108, 20);
             this.textBoxIesire.TabIndex = 0;
-            this.textBoxIesire.Text = "-0.02000000";
+            this.textBoxIesire.Text = "-0.00000000";
             this.textBoxIesire.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // groupBox6
+            // Grafic
             // 
-            this.groupBox6.Controls.Add(this.chart1);
-            this.groupBox6.Location = new System.Drawing.Point(294, 203);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(509, 235);
-            this.groupBox6.TabIndex = 6;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "groupBox6";
+            this.Grafic.BackColor = System.Drawing.Color.Transparent;
+            this.Grafic.Controls.Add(this.chart1);
+            this.Grafic.Location = new System.Drawing.Point(276, 203);
+            this.Grafic.Name = "Grafic";
+            this.Grafic.Size = new System.Drawing.Size(527, 235);
+            this.Grafic.TabIndex = 6;
+            this.Grafic.TabStop = false;
+            this.Grafic.Text = "Grafic";
             // 
             // chart1
             // 
-            chartArea18.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea18);
-            legend18.Name = "Legend1";
-            this.chart1.Legends.Add(legend18);
+            this.chart1.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(15, 19);
             this.chart1.Name = "chart1";
-            series18.ChartArea = "ChartArea1";
-            series18.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series18.Legend = "Legend1";
-            series18.Name = "Intrare";
-            series18.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series18.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            this.chart1.Series.Add(series18);
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "Intrare";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Legend = "Legend1";
+            series2.Name = "vertical";
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series3.Legend = "Legend1";
+            series3.Name = "Marker";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(476, 199);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
+            this.chart1.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.SystemDefault;
             // 
             // nupDendrite
             // 
@@ -304,15 +325,18 @@ namespace Proiect1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = global::Proiect1.Properties.Resources.Neuron_Background_1920x1080;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(824, 464);
             this.Controls.Add(this.nupDendrite);
-            this.Controls.Add(this.groupBox6);
+            this.Controls.Add(this.Grafic);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Neuronul artificial";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -323,7 +347,7 @@ namespace Proiect1
             ((System.ComponentModel.ISupportInitialize)(this.nupTeta)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
+            this.Grafic.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupDendrite)).EndInit();
             this.ResumeLayout(false);
@@ -336,7 +360,7 @@ namespace Proiect1
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox Grafic;
         private System.Windows.Forms.ComboBox dropDownIntrare;
         private System.Windows.Forms.TextBox textBoxIntrare;
         private System.Windows.Forms.NumericUpDown nupVariable;
